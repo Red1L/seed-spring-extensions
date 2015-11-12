@@ -20,7 +20,6 @@ import org.springframework.transaction.support.AbstractPlatformTransactionManage
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Key;
-import com.google.inject.matcher.Matchers;
 import com.google.inject.name.Names;
 
 class SpringModule extends AbstractModule {
@@ -57,7 +56,6 @@ class SpringModule extends AbstractModule {
         requestStaticInjection(SeedInstanceFactoryBean.class);
         bindFromApplicationContext();
         bindTransactionHandlers();
-        bindListener(Matchers.any(), new SpringEntityManagerTypeListener());
     }
 
 	private void bindTransactionHandlers() {
